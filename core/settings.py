@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'googleapp',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -137,3 +138,9 @@ GOOGLE_API_KEY = config('GOOGLE_API_KEY')
 RECAPTCHA_KEY = config('RECAPTCHA_KEY')
 
 RECAPTCHA_SECRET = config('RECAPTCHA_SECRET')
+
+LOGIN_URL = 'users:sign-in'
+LOGIN_REDIRECT_URL = 'user:account'
+LOGOUT_REDIRECT_URL = 'users:sign-in'
+
+BASE_COUNTRY = 'BR'

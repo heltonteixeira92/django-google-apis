@@ -3,3 +3,5 @@ Django==5.0.1
 python-decouple==3.8
 sqlparse==0.4.4
 typing_extensions==4.9.0
+requests==2.31.0
+humanfriendly==10.0

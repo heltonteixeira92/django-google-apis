@@ -20,7 +20,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('', include('googleapp.urls')),
+    path('', include('googleapp.urls', namespace='googleapp')),
+    path('users', include('users.urls', namespace='users')),
     path('admin/', admin.site.urls),
 ]
 

@@ -1,6 +1,9 @@
 from django.urls import path
 from . import views
 
-urlpatterns = [
+app_name = 'googleapp'
 
+urlpatterns = [
+    path('route', views.route, name='route'),
+    path('map', views.map, name='map')
 ]
