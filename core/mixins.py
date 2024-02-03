@@ -48,6 +48,8 @@ class AjaxFormMixin(object):
     def form_invalid(self, form):
         response = super(AjaxFormMixin, self).form_invalid(form)
         if self.request.is_ajax():
+            import ipdb;
+            ipdb.set_trace()
             message = FormErrors(form)
             return JsonResponse({'result': 'Error', 'message': message})
         return response

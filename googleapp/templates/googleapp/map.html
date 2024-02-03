@@ -86,7 +86,7 @@
 {% block extend_footer %}
 
 <script type="text/javascript">
-    var google_api_key = "{{ google_api_key|safe }}"
+    var google_api_key = "{{google_api_key|safe}}";
     var lat_a = {{lat_a|safe}};
     var long_a = {{long_a|safe}};
     var lat_b = {{lat_b|safe}};
@@ -97,7 +97,9 @@
     var long_d = {{long_d|safe}};
     var origin = "{{origin|safe}}";
     var destination = "{{destination|safe}}";
-    var directions = {{directions|safe}};
+    var directions = {{directions|safe}}
 </script>
 
 <script src="{% static 'google_maps.js' %}"></script>
+
+{% endblock %}

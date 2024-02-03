@@ -12,7 +12,6 @@ from core.mixins import (
     AjaxFormMixin,
     reCAPTCHAValidation,
     FormErrors,
-    RedirectParams
 )
 
 from .forms import (
@@ -38,6 +37,8 @@ class AccountView(TemplateView):
 
 def profile_view(request):
     """function view to allow users to update their profile"""
+    result = "Error"
+    message = "There was an error, please try again"
     user = request.user
     profile = user.userprofile
 
@@ -99,8 +100,8 @@ class SignUpView(AjaxFormMixin, FormView):
                 # change result & message on success
                 result = 'Success'
                 message = 'Thank you for signing up'
-            data = {'result': result, 'message': message}
-            return JsonResponse(data)
+                data = {'result': result, 'message': message}
+                return JsonResponse(data)
         return response
 
 
